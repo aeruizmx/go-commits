@@ -6,28 +6,35 @@ const helloWorld string = "Hola %s %s, bievenido al fascinante mundo de Go. \n"
 const testConst = "Test"
 
 func main() {
-	name := getName()
-	lastname := "<Modificar con mi apellido>"
-	number := sum(100, 100)
-	a, b, c := getVariables()
-
+	name, lastname := getCompleteName()
 	fmt.Printf(helloWorld, name, lastname)
-	fmt.Println("Hola mundo")
-	fmt.Println(number, a, b, c)
+	var firstNumber int
+	var secondNumber int
+	fmt.Print("Ingresa un numero: ")
+	fmt.Scanf("%d", &firstNumber)
+	fmt.Print("Ingresa otro numero: ")
+	fmt.Scanf("%d", &secondNumber)
+	var suma = suma(firstNumber, secondNumber)
+	fmt.Printf("El resultado de la suma es %d \n", suma)
+	var resta = resta(firstNumber, secondNumber)
+	fmt.Printf("El resultado de la resta es %d \n", resta)
 }
 
-func getName() string {
+func getCompleteName() (string, string) {
 	var name string
+	var lastname string
 	name = "Sin nombre"
 	fmt.Print("Ingresa tu nombre: ")
 	fmt.Scanf("%s", &name)
-	return name
+	fmt.Print("Ingresa tu Apellido: ")
+	fmt.Scanf("%s", &lastname)
+	return name, lastname
 }
 
-func getVariables() (int, int, int) {
-	return 1, 2, 3
-}
-
-func sum(a int, b int) int {
+func suma(a int, b int) int {
 	return a + b
+}
+
+func resta(a int, b int) int {
+	return a - b
 }
