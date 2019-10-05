@@ -9,18 +9,18 @@ func main() {
 	name, lastname := getCompleteName()
 	fmt.Printf(helloWorld, name, lastname)
 
-	var firstNumber int
-	var secondNumber int
+	var firstNumber float64
+	var secondNumber float64
 
 	fmt.Print("Ingresa un numero: ")
-	fmt.Scanf("%d", &firstNumber)
+	fmt.Scanf("%f", &firstNumber)
 	fmt.Print("Ingresa otro numero: ")
-	fmt.Scanf("%d", &secondNumber)
+	fmt.Scanf("%f", &secondNumber)
 
 	var suma = suma(firstNumber, secondNumber)
-	fmt.Printf("El resultado de la suma es %d \n", suma)
+	fmt.Printf("El resultado de la suma es %f \n", suma)
 	var resta = resta(firstNumber, secondNumber)
-	fmt.Printf("El resultado de la resta es %d \n", resta)
+	fmt.Printf("El resultado de la resta es %f \n", resta)
 
 	a, b, c := getVariables()
 	fmt.Println(a, b, c)
@@ -47,10 +47,10 @@ func getFloat() (float32, float64) {
 	return float32(0.1), float64(float32(0.1))
 }
 
-func suma(a int, b int) int {
+func suma(a float64, b float64) float64 {
 	return a + b
 }
 
-func resta(a int, b int) int {
+func resta(a float64, b float64) float64 {
 	return a - b
 }
