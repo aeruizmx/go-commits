@@ -47,6 +47,8 @@ func main() {
 	forTest()
 
 	strings2()
+
+	switchTest()
 }
 
 func getCompleteName() (string, string) {
@@ -149,4 +151,23 @@ func strings2() {
 	fmt.Println(strings.ToLower(text))
 	fmt.Println(strings.Replace(text, "Hello", "Hola", -1))
 	fmt.Println(strings.Split(text, " "))
+}
+
+func switchTest() {
+	var number = 0
+	fmt.Println("[SWITCH] Ingresa un numero del 1 al 10")
+	fmt.Scanf("%d", &number)
+	switch number {
+	case 1:
+		fmt.Println("El numero es 1")
+	default:
+		fmt.Println("El numero no es uno")
+	}
+
+	switch {
+	case number%2 == 0:
+		fmt.Println("El numero es par")
+	default:
+		fmt.Println("El numero es impar")
+	}
 }
