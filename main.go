@@ -2,21 +2,9 @@ package main
 
 import (
 	"fmt"
+
+	"./structs"
 )
-
-type PlatziCourse struct {
-	Name   string
-	Slug   string
-	Skills []string
-}
-
-func (p PlatziCourse) Subscrive(name string) {
-	fmt.Printf("La persona %s se ha registrado al curso %s", name, p.Name)
-}
-
-type PlatziCareer struct {
-	Course PlatziCourse
-}
 
 const helloWorld string = "Hola %s %s, bievenido al fascinante mundo de Go. \n"
 const testConst = "Test"
@@ -67,18 +55,17 @@ func main() {
 	flow.SwitchTest()*/
 	// fmt.Println(maps.GetMap())
 	// fmt.Println(maps.GetData("Andres"))
-	platziCourse := PlatziCourse{Name: "Go", Slug: "go", Skills: []string{"1", "2"}}
-	platziCourse.Subscrive("ANDRESITO")
-	platziCourse1 := new(PlatziCourse)
+
+	/* platziCourse1 := new(PlatziCourse)
 	platziCourse1.Name = "GO1"
 	platziCourse1.Slug = "GO1"
-	platziCourse1.Skills = []string{"backend"}
-	fmt.Println(platziCourse)
+	platziCourse1.Skills = []string{"backend"} */
+	structs.InterfaceTest()
 
-	platziCareer := PlatziCareer{
+	/* platziCareer := PlatziCareer{
 		Course: PlatziCourse{Name: "Go1", Slug: "go", Skills: []string{"Desarrollo Backend"}},
 	}
-	fmt.Println(platziCareer)
+	fmt.Println(platziCareer) */
 }
 
 func getCompleteName() (string, string) {
