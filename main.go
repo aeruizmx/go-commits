@@ -2,19 +2,19 @@ package main
 
 import (
 	"fmt"
-
-	"./flow"
-	"./name"
-	"./numbers"
-	"./strings2"
-	"./structs"
+	/*	"./flow"
+		"./name"
+		"./numbers"
+		"./strings2"
+		"./structs"*/
+	"./maps"
 )
 
 const helloWorld string = "Hola %s %s, bievenido al fascinante mundo de Go. \n"
 const testConst = "Test"
 
 func main() {
-	lastname := "Ruiz"
+	/*lastname := "Ruiz"
 	firstName := name.GetName()
 	fmt.Printf(helloWorld, firstName, lastname)
 
@@ -56,7 +56,9 @@ func main() {
 
 	strings2.Strings2()
 
-	flow.SwitchTest()
+	flow.SwitchTest()*/
+	fmt.Println(maps.GetMap())
+	fmt.Println(maps.GetData("Andres"))
 }
 
 func getCompleteName() (string, string) {
