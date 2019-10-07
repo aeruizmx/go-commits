@@ -40,6 +40,8 @@ func main() {
 	ifTest()
 
 	adivinarNumero()
+
+	forTest()
 }
 
 func getCompleteName() (string, string) {
@@ -111,5 +113,27 @@ func adivinarNumero() {
 		fmt.Println("Adivinaste el numero")
 	} else {
 		fmt.Println("Suerte para la proxima... :(")
+	}
+}
+
+func forTest() {
+
+	for i := 0; i < 5; i++ {
+		fmt.Println("[FOR] ", i)
+	}
+
+	c := 100
+	for c > 0 {
+		c -= 10
+		fmt.Println("[FOR] Solo con una condicion de c > 0", c)
+	}
+
+	s := 1000
+	for {
+		s -= 1
+		if s == 0 {
+			fmt.Println("Termina el for infinito")
+			break
+		}
 	}
 }
