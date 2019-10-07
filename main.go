@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"./structs"
+	"./numbers"
 )
 
 const helloWorld string = "Hola %s %s, bievenido al fascinante mundo de Go. \n"
@@ -59,13 +59,20 @@ func main() {
 	/* platziCourse1 := new(PlatziCourse)
 	platziCourse1.Name = "GO1"
 	platziCourse1.Slug = "GO1"
-	platziCourse1.Skills = []string{"backend"} */
+	platziCourse1.Skills = []string{"backend"}
 	structs.InterfaceTest()
 
-	/* platziCareer := PlatziCareer{
+	platziCareer := PlatziCareer{
 		Course: PlatziCourse{Name: "Go1", Slug: "go", Skills: []string{"Desarrollo Backend"}},
 	}
 	fmt.Println(platziCareer) */
+	number, err := numbers.Suma("50", 50)
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(number)
 }
 
 func getCompleteName() (string, string) {
