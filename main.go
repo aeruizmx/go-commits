@@ -38,6 +38,8 @@ func main() {
 	getSlice()
 
 	ifTest()
+
+	adivinarNumero()
 }
 
 func getCompleteName() (string, string) {
@@ -97,5 +99,17 @@ func ifTest() {
 
 	if number2 := 3; number2 == 3 {
 		fmt.Println("Entro al condicional")
+	}
+}
+
+func adivinarNumero() {
+	numeroBuscado := 10
+	var numeroIntroducido int
+	fmt.Println("Adivina el numero, esta entre el 1 y 10")
+	fmt.Scanf("%d", &numeroIntroducido)
+	if numeroIntroducido == numeroBuscado {
+		fmt.Println("Adivinaste el numero")
+	} else {
+		fmt.Println("Suerte para la proxima... :(")
 	}
 }
