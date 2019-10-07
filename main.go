@@ -27,6 +27,11 @@ func main() {
 
 	f32, f64 := getFloat()
 	fmt.Println(f32, f64)
+
+	stringUFT8 := getUnicode()
+	fmt.Println("cadena con utf8: ", stringUFT8)
+	fmt.Println(string("Hola"[2]))
+	fmt.Println("Cantidad de letras: ", len("Hola"))
 }
 
 func getCompleteName() (string, string) {
@@ -53,4 +58,8 @@ func suma(a float64, b float64) float64 {
 
 func resta(a float64, b float64) float64 {
 	return a - b
+}
+
+func getUnicode() string {
+	return "がっこうへいく"
 }
