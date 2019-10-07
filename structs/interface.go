@@ -1,11 +1,14 @@
 package structs
 
+import "fmt"
+
 //Paltzi es una interface de PlatziCourse y PlatziCareer
 type Platzi interface {
 	Subscribe(name string)
 }
 
 func InterfaceTest() {
+	defer deferTest()
 	platziCareer := PlatziCareer{
 		Career: "Desarrollador GO",
 		Course: PlatziCourse{Name: "Go", Slug: "/cursos/go", Teacher: PlatziInstructor{Name: "Yohan Graterol", ProfilePicture: "yohan-graterol.jpg", TeachesCourses: []string{"Intruducción a Go", "Go", "Bases de Datos con MongoDB"}}, Skills: []string{"Desarrollo Backend", "Desarrollo Templates"}},
@@ -19,4 +22,8 @@ func InterfaceTest() {
 
 func callSuscribe(p Platzi) {
 	p.Subscribe("ARUIZ")
+}
+
+func deferTest() {
+	fmt.Println("La funcion interface ha culminado")
 }
