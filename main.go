@@ -10,6 +10,10 @@ type PlatziCourse struct {
 	Skills []string
 }
 
+func (p PlatziCourse) Subscrive(name string) {
+	fmt.Printf("La persona %s se ha registrado al curso %s", name, p.Name)
+}
+
 type PlatziCareer struct {
 	Course PlatziCourse
 }
@@ -64,6 +68,7 @@ func main() {
 	// fmt.Println(maps.GetMap())
 	// fmt.Println(maps.GetData("Andres"))
 	platziCourse := PlatziCourse{Name: "Go", Slug: "go", Skills: []string{"1", "2"}}
+	platziCourse.Subscrive("ANDRESITO")
 	platziCourse1 := new(PlatziCourse)
 	platziCourse1.Name = "GO1"
 	platziCourse1.Slug = "GO1"
