@@ -32,6 +32,10 @@ func main() {
 	fmt.Println("cadena con utf8: ", stringUFT8)
 	fmt.Println(string("Hola"[2]))
 	fmt.Println("Cantidad de letras: ", len("Hola"))
+
+	getArray()
+
+	getSlice()
 }
 
 func getCompleteName() (string, string) {
@@ -62,4 +66,19 @@ func resta(a float64, b float64) float64 {
 
 func getUnicode() string {
 	return "がっこうへいく"
+}
+
+func getArray() {
+	var arr1 [2]string
+	arr2 := [3]int{1, 2, 3}
+	arr1[0] = "Array"
+	arr1[1] = "Array 2"
+	fmt.Println(arr1)
+	fmt.Println(arr2)
+}
+
+func getSlice() {
+	var slice1 []string
+	slice1 = append(slice1, "mi", "silce", "1")
+	fmt.Println(slice1)
 }
