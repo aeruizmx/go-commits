@@ -36,6 +36,8 @@ func main() {
 	getArray()
 
 	getSlice()
+
+	ifTest()
 }
 
 func getCompleteName() (string, string) {
@@ -81,4 +83,19 @@ func getSlice() {
 	var slice1 []string
 	slice1 = append(slice1, "mi", "silce", "1")
 	fmt.Println(slice1)
+}
+
+func ifTest() {
+	var number = 0
+	fmt.Println("Ingresa un numero del 1 al 10")
+	fmt.Scanf("%d", &number)
+	if number%2 == 0 {
+		fmt.Println("El numero es par")
+	} else {
+		fmt.Println("El numero es impar")
+	}
+
+	if number2 := 3; number2 == 3 {
+		fmt.Println("Entro al condicional")
+	}
 }
