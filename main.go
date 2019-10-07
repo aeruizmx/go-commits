@@ -2,15 +2,23 @@ package main
 
 import (
 	"fmt"
-	"strings"
+
+	"./flow"
+	"./name"
+	"./numbers"
+	"./strings2"
+	"./structs"
 )
 
 const helloWorld string = "Hola %s %s, bievenido al fascinante mundo de Go. \n"
 const testConst = "Test"
 
 func main() {
-	name, lastname := getCompleteName()
-	fmt.Printf(helloWorld, name, lastname)
+	lastname := "Ruiz"
+	firstName := name.GetName()
+	fmt.Printf(helloWorld, firstName, lastname)
+
+	fmt.Println(firstName)
 
 	var firstNumber float64
 	var secondNumber float64
@@ -20,35 +28,35 @@ func main() {
 	fmt.Print("Ingresa otro numero: ")
 	fmt.Scanf("%f", &secondNumber)
 
-	var suma = suma(firstNumber, secondNumber)
+	var suma = numbers.Suma(firstNumber, secondNumber)
 	fmt.Printf("El resultado de la suma es %f \n", suma)
-	var resta = resta(firstNumber, secondNumber)
+	var resta = numbers.Resta(firstNumber, secondNumber)
 	fmt.Printf("El resultado de la resta es %f \n", resta)
 
-	a, b, c := getVariables()
+	a, b, c := numbers.GetVariables()
 	fmt.Println(a, b, c)
 
-	f32, f64 := getFloat()
+	f32, f64 := numbers.GetFloat()
 	fmt.Println(f32, f64)
 
-	stringUFT8 := getUnicode()
+	stringUFT8 := name.GetUnicode()
 	fmt.Println("cadena con utf8: ", stringUFT8)
 	fmt.Println(string("Hola"[2]))
 	fmt.Println("Cantidad de letras: ", len("Hola"))
 
-	getArray()
+	structs.GetArray()
 
-	getSlice()
+	structs.GetSlice()
 
-	ifTest()
+	flow.IfTest()
 
 	adivinarNumero()
 
-	forTest()
+	flow.ForTest()
 
-	strings2()
+	strings2.Strings2()
 
-	switchTest()
+	flow.SwitchTest()
 }
 
 func getCompleteName() (string, string) {
@@ -61,55 +69,6 @@ func getCompleteName() (string, string) {
 	fmt.Scanf("%s", &lastname)
 	return name, lastname
 }
-func getVariables() (int, int32, int64) {
-	return 1, 241700000, 1919191181818181
-}
-
-func getFloat() (float32, float64) {
-	return float32(0.1), float64(float32(0.1))
-}
-
-func suma(a float64, b float64) float64 {
-	return a + b
-}
-
-func resta(a float64, b float64) float64 {
-	return a - b
-}
-
-func getUnicode() string {
-	return "がっこうへいく"
-}
-
-func getArray() {
-	var arr1 [2]string
-	arr2 := [3]int{1, 2, 3}
-	arr1[0] = "Array"
-	arr1[1] = "Array 2"
-	fmt.Println(arr1)
-	fmt.Println(arr2)
-}
-
-func getSlice() {
-	var slice1 []string
-	slice1 = append(slice1, "mi", "silce", "1")
-	fmt.Println(slice1)
-}
-
-func ifTest() {
-	var number = 0
-	fmt.Println("Ingresa un numero del 1 al 10")
-	fmt.Scanf("%d", &number)
-	if number%2 == 0 {
-		fmt.Println("El numero es par")
-	} else {
-		fmt.Println("El numero es impar")
-	}
-
-	if number2 := 3; number2 == 3 {
-		fmt.Println("Entro al condicional")
-	}
-}
 
 func adivinarNumero() {
 	numeroBuscado := 10
@@ -120,54 +79,5 @@ func adivinarNumero() {
 		fmt.Println("Adivinaste el numero")
 	} else {
 		fmt.Println("Suerte para la proxima... :(")
-	}
-}
-
-func forTest() {
-
-	for i := 0; i < 5; i++ {
-		fmt.Println("[FOR] ", i)
-	}
-
-	c := 100
-	for c > 0 {
-		c -= 10
-		fmt.Println("[FOR] Solo con una condicion de c > 0", c)
-	}
-
-	s := 1000
-	for {
-		s--
-		if s == 0 {
-			fmt.Println("Termina el for infinito")
-			break
-		}
-	}
-}
-
-func strings2() {
-	var text = "Hello world, Hello Platzi, Hello Go"
-	fmt.Println(strings.ToUpper(text))
-	fmt.Println(strings.ToLower(text))
-	fmt.Println(strings.Replace(text, "Hello", "Hola", -1))
-	fmt.Println(strings.Split(text, " "))
-}
-
-func switchTest() {
-	var number = 0
-	fmt.Println("[SWITCH] Ingresa un numero del 1 al 10")
-	fmt.Scanf("%d", &number)
-	switch number {
-	case 1:
-		fmt.Println("El numero es 1")
-	default:
-		fmt.Println("El numero no es uno")
-	}
-
-	switch {
-	case number%2 == 0:
-		fmt.Println("El numero es par")
-	default:
-		fmt.Println("El numero es impar")
 	}
 }
