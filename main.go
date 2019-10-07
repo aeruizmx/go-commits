@@ -5,16 +5,9 @@ import (
 )
 
 type PlatziCourse struct {
-	Name    string
-	Slug    string
-	Teacher PlatziInstructor
-	Skills  []string
-}
-
-type PlatziInstructor struct {
-	Name           string
-	ProfilePicture string
-	TeachesCourses []string
+	Name   string
+	Slug   string
+	Skills []string
 }
 
 type PlatziCareer struct {
@@ -78,7 +71,7 @@ func main() {
 	fmt.Println(platziCourse)
 
 	platziCareer := PlatziCareer{
-		Course: PlatziCourse{Name: "Go", Slug: "/cursos/go", Teacher: PlatziInstructor{Name: "Yohan Graterol", ProfilePicture: "yohan-graterol.jpg", TeachesCourses: []string{"Intruducción a Go", "Go", "Bases de Datos con MongoDB"}}, Skills: []string{"Desarrollo Backend", "Desarrollo Templates"}},
+		Course: PlatziCourse{Name: "Go1", Slug: "go", Skills: []string{"Desarrollo Backend"}},
 	}
 	fmt.Println(platziCareer)
 }
