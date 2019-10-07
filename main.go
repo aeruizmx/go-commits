@@ -2,13 +2,24 @@ package main
 
 import (
 	"fmt"
-	/*	"./flow"
-		"./name"
-		"./numbers"
-		"./strings2"
-		"./structs"*/
-	"./maps"
 )
+
+type PlatziCourse struct {
+	Name    string
+	Slug    string
+	Teacher PlatziInstructor
+	Skills  []string
+}
+
+type PlatziInstructor struct {
+	Name           string
+	ProfilePicture string
+	TeachesCourses []string
+}
+
+type PlatziCareer struct {
+	Course PlatziCourse
+}
 
 const helloWorld string = "Hola %s %s, bievenido al fascinante mundo de Go. \n"
 const testConst = "Test"
@@ -57,8 +68,19 @@ func main() {
 	strings2.Strings2()
 
 	flow.SwitchTest()*/
-	fmt.Println(maps.GetMap())
-	fmt.Println(maps.GetData("Andres"))
+	// fmt.Println(maps.GetMap())
+	// fmt.Println(maps.GetData("Andres"))
+	platziCourse := PlatziCourse{Name: "Go", Slug: "go", Skills: []string{"1", "2"}}
+	platziCourse1 := new(PlatziCourse)
+	platziCourse1.Name = "GO1"
+	platziCourse1.Slug = "GO1"
+	platziCourse1.Skills = []string{"backend"}
+	fmt.Println(platziCourse)
+
+	platziCareer := PlatziCareer{
+		Course: PlatziCourse{Name: "Go", Slug: "/cursos/go", Teacher: PlatziInstructor{Name: "Yohan Graterol", ProfilePicture: "yohan-graterol.jpg", TeachesCourses: []string{"Intruducción a Go", "Go", "Bases de Datos con MongoDB"}}, Skills: []string{"Desarrollo Backend", "Desarrollo Templates"}},
+	}
+	fmt.Println(platziCareer)
 }
 
 func getCompleteName() (string, string) {
