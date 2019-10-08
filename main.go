@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-
-	"./numbers"
 )
 
 const helloWorld string = "Hola %s %s, bievenido al fascinante mundo de Go. \n"
@@ -65,14 +63,15 @@ func main() {
 	platziCareer := PlatziCareer{
 		Course: PlatziCourse{Name: "Go1", Slug: "go", Skills: []string{"Desarrollo Backend"}},
 	}
-	fmt.Println(platziCareer) */
+	fmt.Println(platziCareer)
 	number, err := numbers.Suma("50", 50)
 
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println(number)
+	fmt.Println(number)*/
+	pointerTest()
 }
 
 func getCompleteName() (string, string) {
@@ -96,4 +95,20 @@ func adivinarNumero() {
 	} else {
 		fmt.Println("Suerte para la proxima... :(")
 	}
+}
+
+func pointerTest() {
+	a := 100
+	var b *int
+	b = &a
+	fmt.Println("Sin modificar")
+	fmt.Println(a, *b)
+	fmt.Println(&a, b)
+	pointerModify(b)
+	fmt.Println(a, *b)
+	fmt.Println(&a, b)
+}
+
+func pointerModify(c *int) {
+	*c = 10555
 }
