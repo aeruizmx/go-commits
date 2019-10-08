@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 const helloWorld string = "Hola %s %s, bievenido al fascinante mundo de Go. \n"
@@ -70,8 +71,11 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Println(number)*/
-	pointerTest()
+	fmt.Println(number)
+	pointerTest()*/
+	go forGo(500)
+	go forGo(400)
+	time.Sleep(10000 * time.Millisecond)
 }
 
 func getCompleteName() (string, string) {
@@ -111,4 +115,14 @@ func pointerTest() {
 
 func pointerModify(c *int) {
 	*c = 10555
+}
+
+func helloGo(index int) {
+	fmt.Println("Hola soy un println en la Go routine #", index)
+}
+
+func forGo(n int) {
+	for i := 0; i < n; i++ {
+		go helloGo(i)
+	}
 }
